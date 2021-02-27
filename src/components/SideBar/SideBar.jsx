@@ -1,12 +1,17 @@
+import { NavLink } from 'react-router-dom';
 import classes from './SideBar.module.css';
 
 const SideBar = () => {
     return <nav className={classes.nav}>
         <ul className={classes.sideBar}>
-            <li><a href='/profile'>Profile</a></li>
-            <li><a href='/messenger'>Messenger</a></li>
-            <li><a href='/news'>News</a></li>
-            <li><a href='/music'>Music</a></li>
+            <li className={classes.item}>
+                <NavLink to='/profile' activeClassName={classes.activeLink}>Profile</NavLink>
+            </li>
+            <li className={classes.item}>
+                <NavLink to='/messenger' activeClassName={classes.activeLink}>Messenger</NavLink>
+            </li>
+            <li className='item'><a href='/news'>News</a></li>
+            <li className='item'><a href='/music'>Music</a></li>
         </ul>
     </nav>
 };

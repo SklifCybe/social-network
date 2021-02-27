@@ -10,3 +10,6 @@
 .sideBar a{
     text-decoration: none;
 }
+.item a.activeLink {
+    color: gold;
+}
