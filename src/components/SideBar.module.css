@@ -1,0 +1,9 @@
+.nav {
+    grid-area: nav;
+    background-color: #13ce66;
+    color: #fff;
+}
+.sideBar {
+    list-style-type: none;
+    padding: 0;
+}
