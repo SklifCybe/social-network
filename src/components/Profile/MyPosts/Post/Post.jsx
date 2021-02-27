@@ -1,8 +1,11 @@
 import classes from './Post.module.css';
 
-const Post = () => {
+const Post = props => {
     return (
-        <li>Hey, who nobody love me?</li>
+        <li>
+            {props.message}
+            <div>Like {props.likeCount}</div>
+        </li>
     );
 };
 

@@ -6,7 +6,8 @@ const MyPosts = () => {
         <section>
             My posts:
             <ul>
-                <Post />
+                <Post message='Hi, how are you?' likeCount='20' />
+                <Post message="It's my second post" likeCount='15' />
             </ul>
         </section>
     );
