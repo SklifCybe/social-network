@@ -7,3 +7,6 @@
     list-style-type: none;
     padding: 0;
 }
+.sideBar a{
+    text-decoration: none;
+}
