@@ -1,3 +1,4 @@
+import React from 'react';
 import BackgroundImage from './BackgroundImage/BackgroundImage';
 import classes from './ProfileInfo.module.css';
 

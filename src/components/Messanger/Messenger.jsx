@@ -1,3 +1,4 @@
+import React from 'react';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
 import classes from './Messenger.module.css';
