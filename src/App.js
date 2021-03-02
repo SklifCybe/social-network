@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -6,15 +7,15 @@ import Profile from './components/Profile/Profile';
 import Messenger from './components/Messanger/Messenger';
 
 
-const App = () => {
+const App = props => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header />
                 <SideBar />
                 <div className='app-wrapper-content'>
-                    <Route path='/profile' component={Profile} />
-                    <Route path='/messenger' component={Messenger} />
+                    <Route path='/profile' render={() => <Profile posts={props.state.posts}/>} />
+                    <Route path='/messenger' render={() => <Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>} />
                     <Route path='/news' />
                     <Route path='music' />
                 </div>
