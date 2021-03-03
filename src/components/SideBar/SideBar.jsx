@@ -13,6 +13,7 @@ const SideBar = () => {
             </li>
             <li className='item'><a href='/news'>News</a></li>
             <li className='item'><a href='/music'>Music</a></li>
+            <li className='item'><a href='/settings'>Settings</a></li>
         </ul>
     </nav>
 };

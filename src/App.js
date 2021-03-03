@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import Profile from './components/Profile/Profile';
@@ -9,7 +9,6 @@ import Messenger from './components/Messanger/Messenger';
 
 const App = props => {
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header />
                 <SideBar />
@@ -20,7 +19,6 @@ const App = props => {
                     <Route path='music' />
                 </div>
             </div>
-        </BrowserRouter>
     );
 };
 
