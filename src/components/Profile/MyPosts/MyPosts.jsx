@@ -6,12 +6,13 @@ const MyPosts = props => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        debugger;
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
     }
 
     let postsElements = props.posts
-        .map(post => <Post message={post.message} likeCount={post.likeCount} />);
+        .map(post => <Post message={post.message} likesCount={post.likesCount} />);
 
     return (
         <section className={classes.myPosts}>

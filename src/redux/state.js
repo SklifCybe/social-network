@@ -1,7 +1,7 @@
 let state = {
     posts: [
-        { id: '0', message: 'Hi, how are you?', likeCount: '20' },
-        { id: '1', message: 'It\'s my second post', likeCount: '15' }
+        { id: '0', message: 'Hi, how are you?', likesCount: '20' },
+        { id: '1', message: 'It\'s my second post', likesCount: '15' }
     ],
     dialogs: [
         { name: 'Ilya', id: '0' },
@@ -15,6 +15,16 @@ let state = {
         { id: '1', message: 'How are you?' },
         { id: '2', message: 'Why did you leave me?' },
     ]
+};
+
+export let addPost = (message) => {
+    let post = {
+        id: 5,
+        message: message,
+        likesCount: '0'
+    };
+    
+    state.posts.push(post);
 };
 
 export default state;
