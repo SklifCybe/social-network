@@ -1,3 +1,5 @@
+import {rerender} from '../render';
+
 let state = {
     posts: [
         { id: '0', message: 'Hi, how are you?', likesCount: '20' },
@@ -25,6 +27,7 @@ export let addPost = (message) => {
     };
     
     state.posts.push(post);
+    rerender(state);
 };
 
 export default state;
