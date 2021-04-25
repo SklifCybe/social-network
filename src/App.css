@@ -8,26 +8,7 @@
     grid-template-rows: 30px 1fr;
     grid-template-columns: 2fr 10fr;
 }
-header {
-    grid-area: header;
-    background-color: #06b667;
-}
-header .logo {
-    width: 30px;
-}
-nav {
-    grid-area: nav;
-    background-color: #06b667;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0px;
-}
-main {
+.app-wrapper-content {
     grid-area: main;
     background-color: yellow;
-}
-main .picture {
-    height: 200px;
-    width: 100%;
 }
