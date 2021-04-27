@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import Profile from './components/Profile/Profile';
@@ -10,21 +10,20 @@ import Music from './components/Music/Music';
 import './App.css';
 
 
-const App = () => {
+const App = (props) => {
     return (
-        <BrowserRouter>
         <div className="app-wrapper">
             <Header />
             <SideBar />
             <main className="app-wrapper-content">
-                <Route path="/profile" component={Profile}/>
-                <Route path="/messages" component={Dialogs}/>
+                <Route path="/profile" render={() => <Profile state={props.state.profilePage}/>}/>
+                <Route path="/messages" render={() => 
+                    <Dialogs state={props.state.dialogsPage} />}/>
                 <Route path="/news" component={News}/>
                 <Route path="/music" component={Music}/>
                 <Route path="/settings" component={Settings}/>
             </main>
         </div>
-        </BrowserRouter>
     );
 };
 
