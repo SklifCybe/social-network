@@ -1,5 +1,6 @@
 import { rerenderEntireTree } from '../render';
 
+
 let state = {
     profilePage: {
         posts: [
@@ -51,9 +52,10 @@ export const addPost = () => {
 };
 
 export const updateNewPostText = (newText) => {
-    debugger;
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state, addPost, updateNewPostText);
 };
+
+window.state = state;
 
 export default state;
