@@ -8,3 +8,6 @@
 .active {
     color: gold;
 }
+.btnSend {
+    display: block;
+}
