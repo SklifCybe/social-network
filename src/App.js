@@ -17,12 +17,15 @@ const App = (props) => {
             <SideBar />
             <main className="app-wrapper-content">
                 <Route path="/profile" render={() => 
-                    <Profile 
+                    <Profile
                         state={props.state.profilePage} 
                         dispatch={props.dispatch}
                         newPostText={props.state.profilePage.newPostText}/>} />
                 <Route path="/messages" render={() => 
-                    <Dialogs state={props.state.dialogsPage} />}/>
+                    <Dialogs 
+                        state={props.state.dialogsPage} 
+                        dispatch={props.dispatch}
+                        newMessageText={props.state.dialogsPage.newMessageText}/>}/>
                 <Route path="/news" component={News}/>
                 <Route path="/music" component={Music}/>
                 <Route path="/settings" component={Settings}/>

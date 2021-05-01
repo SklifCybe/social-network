@@ -1,3 +1,6 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+
 let store = {
     _state: {
         profilePage: {
@@ -34,7 +37,8 @@ let store = {
                 { id: 4, message: 'I go to sleep' },
                 { id: 5, message: 'Your mom gay' },
                 { id: 6, message: 'Mazafaka' },
-            ]
+            ],
+            newMessageText: ''
         }
     },
     get state() {
@@ -47,34 +51,14 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            this._state.profilePage.posts.push(
-                {
-                    id: 7,
-                    message: this._state.profilePage.newPostText,
-                    likesCount: 0
-                }
-            );
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+
+        this._callSubscriber(this._state);
     }
 };
 
-export const addPostActionCreator = () => (
-    {
-        type: 'ADD-POST',
-    }
-)
 
-export const updateNewPostTextActionCreator = (text) => (
-    {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: text,
-    }
-)
 
 window.store = store;
 
