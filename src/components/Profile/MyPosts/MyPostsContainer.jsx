@@ -5,7 +5,8 @@ import { addPostCreator, updateNewPostTextCreator} from '../../../redux/profile-
 
 const mapStateToProps = (state) => {
     return {
-        newPostText: state.profilePage.updateNewPostText,
+        updateNewPostText: state.profilePage.updateNewPostText,
+        newPostText: state.profilePage.newPostText,
         posts: state.profilePage.posts
     };
 };
@@ -13,7 +14,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addPost: () => {
             dispatch(addPostCreator());
-            dispatch(updateNewPostTextCreator(''));
         },
         updateNewPostText: (text) => {
             dispatch(updateNewPostTextCreator(text));

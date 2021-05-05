@@ -15,11 +15,11 @@ const Dialogs = (props) => {
         <div className={styles.dialogs}>
             <div className={styles.dialogsItems}>
                 {props.dialogs.map(dialog =>
-                    <DialogsItem name={dialog.name} id={dialog.id} />)
+                    <DialogsItem name={dialog.name} id={dialog.id} key={dialog.id}/>)
                 }
             </div>
             <div className={styles.messages}>
-                {props.messages.map(message => <Message message={message.message} />)}
+                {props.messages.map(message => <Message message={message.message} key={message.id}/>)}
                 <textarea
                     onChange={onNewMessageChange}
                     placeholder="Enter your message"

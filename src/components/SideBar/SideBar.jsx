@@ -21,6 +21,9 @@ const SideBar = () => {
                 <li className={styles.item}>
                     <NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink>
                 </li>
+                <li className={styles.item}>
+                    <NavLink to='/users' activeClassName={styles.active}>Find User</NavLink>
+                </li>
             </ul>
         </nav>
     );

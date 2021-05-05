@@ -14,22 +14,22 @@ const initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-    let stateCopy = JSON.parse(JSON.stringify(state));
+    // let stateCopy = JSON.parse(JSON.stringify(state));
 
     switch (action.type) {
         case ADD_POST:
-            stateCopy.posts.push(
-                {
-                    id: 7,
-                    message: state.newPostText,
-                    likesCount: 0
-                })
-            break;
+            return {
+                ...state,
+                posts: [...state.posts, {id: 7, message: state.newPostText, likesCount: 0}],
+                newPostText: ''
+            };
         case UPDATE_NEW_POST_TEXT:
-            stateCopy.newPostText = action.newText;
-            break;
+            return {
+                ...state,
+                newPostText: action.newText
+            }
     }
-    return stateCopy;
+    return state;
 };
 
 export const addPostCreator = () => (
