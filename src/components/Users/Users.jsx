@@ -5,10 +5,9 @@ import userPhoto from '../../assets/images/default-image.png';
 
 const Users = (props) => {
     if (props.users.length === 0) {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+        axios.get('https://api.jsonbin.io/b/6095732f21a9db6e95f79534/1')
             .then(res => {
-                //console.log(res.data.items)
-                props.setUsers(res.data.items);
+                props.setUsers(res.data.users);
             });
     };
 
@@ -20,7 +19,7 @@ const Users = (props) => {
                     props.users.map(user =>
                         <div key={user.id}>
                             <div className={styles.user}>
-                                <img src={user.photos.small != null ? user.photos.small : userPhoto} className={styles.avatar} />
+                                <img src={user.avatarUrl != null ? user.avatarUrl : userPhoto} className={styles.avatar} />
                                 <div className={styles.btnFollow}>
                                     {user.followed
                                         ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
@@ -28,10 +27,10 @@ const Users = (props) => {
                                 </div>
                             </div>
                             <div className={styles.userInfo}>
-                                <div>
-                                    <div className={styles.fullname}>{user.name}</div>
-                                    <div className={styles.status}>{user.status}</div>
-                                </div>
+                                <div className={styles.fullname}>{user.fullName}</div>
+                                <div className={styles.status}>{user.status}</div>
+                                <div className={styles.city}>{user.location.city}</div>
+                                <div className={styles.country}>{user.location.country}</div>
                             </div>
                         </div>)
                 }
