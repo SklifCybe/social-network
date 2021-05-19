@@ -5,9 +5,10 @@ import userPhoto from '../../assets/images/default-image.png';
 
 const Users = (props) => {
     if (props.users.length === 0) {
-        axios.get('https://api.jsonbin.io/b/6095732f21a9db6e95f79534/1')
+        axios.get('http://localhost:3001/users')
             .then(res => {
-                props.setUsers(res.data.users);
+                console.log(res.data);
+                props.setUsers(res.data);
             });
     };
 
