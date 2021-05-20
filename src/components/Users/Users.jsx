@@ -3,41 +3,42 @@ import axios from 'axios';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/default-image.png';
 
-const Users = (props) => {
-    if (props.users.length === 0) {
+class Users extends React.Component {
+    componentDidMount() {
         axios.get('http://localhost:3001/users')
             .then(res => {
                 console.log(res.data);
-                props.setUsers(res.data);
+                this.props.setUsers(res.data);
             });
-    };
-
-    return (
-        <div className={styles.content}>
-            <h2 className={styles.title}>Users</h2>
-            <div className={styles.users}>
-                {
-                    props.users.map(user =>
-                        <div key={user.id}>
-                            <div className={styles.user}>
-                                <img src={user.avatarUrl != null ? user.avatarUrl : userPhoto} className={styles.avatar} />
-                                <div className={styles.btnFollow}>
-                                    {user.followed
-                                        ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
-                                        : <button onClick={() => props.follow(user.id)}>Follow</button>}
+    }
+    render() {
+        return (
+            <div className={styles.content}>
+                <h2 className={styles.title}>Users</h2>
+                <div className={styles.users}>
+                    {
+                        this.props.users.map(user =>
+                            <div key={user.id}>
+                                <div className={styles.user}>
+                                    <img src={user.avatarUrl != null ? user.avatarUrl : userPhoto} className={styles.avatar} />
+                                    <div className={styles.btnFollow}>
+                                        {user.followed
+                                            ? <button onClick={() => this.props.unfollow(user.id)}>Unfollow</button>
+                                            : <button onClick={() => this.props.follow(user.id)}>Follow</button>}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.userInfo}>
-                                <div className={styles.fullname}>{user.fullName}</div>
-                                <div className={styles.status}>{user.status}</div>
-                                <div className={styles.city}>{user.location.city}</div>
-                                <div className={styles.country}>{user.location.country}</div>
-                            </div>
-                        </div>)
-                }
+                                <div className={styles.userInfo}>
+                                    <div className={styles.fullname}>{user.fullName}</div>
+                                    <div className={styles.status}>{user.status}</div>
+                                    <div className={styles.city}>{user.location.city}</div>
+                                    <div className={styles.country}>{user.location.country}</div>
+                                </div>
+                            </div>)
+                    }
+                </div>
             </div>
-        </div>
-    );
+        )
+    }
 };
 
 export default Users;

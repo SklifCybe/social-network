@@ -32,6 +32,39 @@
                 "city": "Grozny",
                 "country": "Chechny"
             }
+        },
+        {
+            "id": 4,
+            "avatarUrl": null,
+            "fullName": "Viktor Ermakov",
+            "status": "Лучше быть последним — первым, чем первым — последним",
+            "followed": true,
+            "location": {
+                "city": "Vitebsk",
+                "country": "Belarus"
+            }
+        },
+        {
+            "id": 5,
+            "avatarUrl": null,
+            "fullName": "Daniil Konoshenko",
+            "status": "Каждый думает, что не знает что, но не каждый не знает, что знает, кто не я …",
+            "followed": true,
+            "location": {
+                "city": "Krichev",
+                "country": "Belarus"
+            }
+        },
+        {
+            "id": 6,
+            "avatarUrl": null,
+            "fullName": "Nikita Yaroshevich",
+            "status": "В жизни полно лжи и грязи, она не так красива. Даже твой лучший друг может не поделиться пивом…",
+            "followed": true,
+            "location": {
+                "city": "Ganchevichi",
+                "country": "Belarus"
+            }
         }
     ]
 }
