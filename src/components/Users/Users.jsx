@@ -12,6 +12,11 @@ class Users extends React.Component {
             });
     }
     render() {
+        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        let pages = [];
+        for (let i = 1; i <= pageCount; i++) pages.push(i)
+
         return (
             <div className={styles.content}>
                 <h2 className={styles.title}>Users</h2>
@@ -34,6 +39,15 @@ class Users extends React.Component {
                                     <div className={styles.country}>{user.location.country}</div>
                                 </div>
                             </div>)
+                    }
+                </div>
+                <div>
+                    {
+                        pages.map((page) => {
+                            return (
+                                <span>{page}</span>
+                            )
+                        })
                     }
                 </div>
             </div>
