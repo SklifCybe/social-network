@@ -66,5 +66,8 @@
                 "country": "Belarus"
             }
         }
-    ]
+    ],
+    "totalUsers": {
+        "count": 6        
+    }
 }

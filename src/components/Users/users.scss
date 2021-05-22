@@ -1,0 +1,90 @@
+.users {
+    position: relative;
+
+    &__title {
+        padding-left: 25px;
+    }
+
+    &__items {
+        padding-left: 50px;
+
+        &-item {
+            display: inline-block;
+        }
+
+        &-info {
+            height: 70px;
+            display: inline-block;
+            position: relative;
+            padding: 10px;
+            margin-left: 10px;
+            width: 600px;
+            border: 2px solid rgb(131, 131, 131);
+            border-radius: 10px;
+
+            &-fullname {
+                position: absolute;
+                top: 8px;
+                left: 16px;
+                font-size: 18px;
+            }
+
+            &-status {
+                position: absolute;
+                bottom: 8px;
+                left: 16px;
+                font-size: 18px;
+            }
+
+            &-country {
+                position: absolute;
+                top: 8px;
+                right: 16px;
+                font-size: 18px;
+            }
+
+            &-city {
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    &__btn-follow {
+        display: block;
+        margin-left: 23px;
+    }
+
+    &__footer {
+        &-pagination {
+            cursor: pointer;
+        }
+
+        &-list-number li {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 15px;
+            width: 40px;
+            line-height: 40px;
+            border: 1px solid black;
+            text-align: center;
+            justify-content: center;
+            background-color: #1f1f1f;
+            color: #fff;
+
+            &.active {
+                font-weight: bold;
+                background-color: #ff9900;
+                color: #000;
+            }
+        }
+    }
+}
