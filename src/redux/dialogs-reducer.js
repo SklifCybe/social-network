@@ -41,8 +41,9 @@ const dialogsReducer = (state = initialState, action) => {
                 ...state,
                 newMessageText: action.body,
             }
+        default: 
+            return state;
     }
-    return state;
 };
 
 export const sendMessageCreator = () => (

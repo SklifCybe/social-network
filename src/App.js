@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
@@ -18,7 +18,7 @@ const App = (props) => {
             <SideBar />
             <main className="app-wrapper-content">
                 <Route path="/profile" render={() =>
-                    <Profile
+                    <ProfileContainer
                         store={props.store} />} />
                 <Route path="/messages" render={() =>
                     <DialogsContainer
