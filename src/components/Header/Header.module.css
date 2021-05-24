@@ -5,3 +5,11 @@
 .logo {
     width: 30px;
 }
+.loginBlock {
+    float: right;
+}
+.loginBlock a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}

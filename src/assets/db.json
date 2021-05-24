@@ -68,7 +68,7 @@
         }
     ],
     "totalUsers": {
-        "count": 6        
+        "count": 6
     },
     "profile": [
         {
@@ -137,5 +137,13 @@
                 "country": "Belarus"
             }
         }
-    ]
+    ],
+    "auth": {
+        "data": {
+            "userId": 1,
+            "email": "123@gmail.com",
+            "login": "chelovek"
+        },
+        "resultCode": 0
+    }
 }

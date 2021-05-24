@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import Preloader from '../common/Preloader/Preloader';
 
-import userPhoto from '../../assets/images/default-image.png';
+import userPhoto from '../../assets/images/default-avatar.png';
 import './users.scss';
 
 const Users = (props) => {
@@ -23,13 +23,13 @@ const Users = (props) => {
                             <div key={user.id}>
                                 <div className="users__items-item">
                                     <NavLink to={`/profile/${user.id}`}>
-                                    <img src={user.avatarUrl != null ? user.avatarUrl : userPhoto} className="users__avatar" alt="avatar"/>
+                                        <img src={user.avatarUrl != null ? user.avatarUrl : userPhoto} className="users__avatar" alt="avatar" />
+                                    </NavLink>
                                     <div className="users__btn-follow">
                                         {user.followed
                                             ? <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
                                             : <button onClick={() => props.follow(user.id)}>Follow</button>}
                                     </div>
-                                    </NavLink>
                                 </div>
                                 <div className="users__items-info">
                                     <div className="users__items-info-fullname">{user.fullName}</div>

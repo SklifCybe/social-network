@@ -1,0 +1,16 @@
+.profile-info {
+    &__background {
+        height: 200px;
+        width: 100%;
+    }
+
+    &__description {
+        margin: 10px;
+    }
+
+    &__avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+}

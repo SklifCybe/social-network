@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import SideBar from './components/SideBar/SideBar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -14,10 +14,10 @@ import './App.css';
 const App = (props) => {
     return (
         <div className="app-wrapper">
-            <Header />
+            <HeaderContainer />
             <SideBar />
             <main className="app-wrapper-content">
-                <Route path="/profile" render={() =>
+                <Route path="/profile/:userId?" render={() =>
                     <ProfileContainer
                         store={props.store} />} />
                 <Route path="/messages" render={() =>
